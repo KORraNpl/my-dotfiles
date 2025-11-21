@@ -1,0 +1,16 @@
+[advice]
+	statusHints = false
+[core]
+	editor = "subl --new-window --wait"
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	renames = true
+[fetch]
+	all = true
+	prune = true
+	pruneTags = true
+[merge]
+	conflictStyle = diff3
+[pull]
+	ff = only
