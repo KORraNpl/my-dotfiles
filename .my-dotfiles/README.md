@@ -15,21 +15,10 @@ mydotfiles remote add origin git@github.com:KORraNpl/my-dotfiles.git
 
 ## Replication
 ```sh
-git clone --separate-git-dir=$HOME/.my-dotfiles https://github.com/KORraNpl/my-dotfiles.git my-dotfiles-tmp
-rsync --recursive --verbose --exclude '.git' my-dotfiles-tmp/ $HOME/
-rm --recursive my-dotfiles-tmp
-```
-
-## Configuration
-```sh
+echo "alias mydotfiles='git --git-dir=$HOME/.my-dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
+omz reload
+git clone --bare git@github.com:KORraNpl/my-dotfiles.git $HOME/.my-dotfiles
+mydotfiles checkout
 mydotfiles config status.showUntrackedFiles no
-mydotfiles remote set-url origin git@github.com:KORraNpl/my-dotfiles.git
 ```
-
-## Usage
-```sh
-mydotfiles status
-mydotfiles add .gitconfig
-mydotfiles commit -m 'Add gitconfig'
-mydotfiles push
-```
+If the `mydotfiles checkout` fails, most probably this means that some of the files already exist. Rename them to merge after checkout or run `mydotfiles checkout --force`, if files are safe to overwrite.
