@@ -14,3 +14,5 @@
 	conflictStyle = diff3
 [pull]
 	ff = only
+[user]
+	useConfigOnly = true
