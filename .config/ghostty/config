@@ -1,3 +1,4 @@
 shell-integration-features = ssh-terminfo,ssh-env
+tab-inherit-working-directory = false
 window-inherit-working-directory = false
 window-save-state = always
